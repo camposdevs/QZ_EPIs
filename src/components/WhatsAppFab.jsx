@@ -11,7 +11,7 @@ export default function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      sx={{ position: 'fixed', right: 16, bottom: 'calc(16px + env(safe-area-inset-bottom, 0px))', zIndex: 'fab', gap: 1, px: 3, boxShadow: 'none', border: 1, borderColor: 'rgba(0,0,0,0.25)', bgcolor: 'whatsapp.main', color: 'whatsapp.contrastText', '&:hover': { bgcolor: 'whatsapp.dark' } }}
+      sx={{ position: 'fixed', left: 16, bottom: 'calc(16px + env(safe-area-inset-bottom, 0px))', zIndex: 'fab', gap: 1, px: 3, boxShadow: 'none', border: 1, borderColor: 'rgba(0,0,0,0.25)', bgcolor: 'whatsapp.main', color: 'whatsapp.contrastText', '&:hover': { bgcolor: 'whatsapp.dark' } }}
     >
       <WhatsAppIcon /> WhatsApp
     </Fab>
