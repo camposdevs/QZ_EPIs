@@ -1,0 +1,134 @@
+const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => String(a + i));
+const NUMEROS = range(36, 46);
+const ROUPA = ['P', 'M', 'G', 'GG'];
+const LUVA = ['P', 'M', 'G'];
+const SPEC_PADRAO = ['Especificações: (preencher)', 'Número do CA: (preencher)'];
+
+export const slugify = (text) =>
+  text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
+// Mensagem padrão por categoria (usada só se o produto não tiver a sua própria `mensagem`).
+// n = nome do produto, t = tamanho escolhido.
+const MENSAGENS = {
+  Pés: (n, t) => `Olá! Tenho interesse em ${n}, número ${t}. Tem disponível? Qual o valor?`,
+  Mãos: (n, t) => `Olá! Tenho interesse em ${n}, tamanho ${t}. Tem disponível? Qual o valor?`,
+  Vestuário: (n, t) => `Olá! Tenho interesse em ${n}${t ? `, tamanho ${t}` : ''}. Tem disponível? Qual o valor?`,
+  Cabeça: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
+  Visual: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
+  Auditiva: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
+  Altura: (n) => `Olá! Quero saber sobre ${n}. Tem em estoque? Qual o valor?`,
+};
+const MENSAGEM_PADRAO = (n, t) => `Olá! Tenho interesse em ${n}${t ? `, tamanho ${t}` : ''}. Qual o valor?`;
+export const buildMessage = (product, size) =>
+  product.mensagem
+    ? product.mensagem.replaceAll('{tamanho}', size ?? '').replaceAll('{produto}', product.name)
+    : (MENSAGENS[product.cat] ?? MENSAGEM_PADRAO)(product.name, size);
+
+const item = (cat, name, sizes = [], opts = {}) => ({
+  cat,
+  name,
+  sizes,
+  slug: slugify(name),
+  specs: opts.specs ?? SPEC_PADRAO,
+  mensagem: opts.mensagem,
+});
+
+// Mensagem de cada item do WhatsApp: edite o texto de cada produto abaixo.
+// Use {tamanho} onde o tamanho escolhido deve entrar (itens sem tamanho ignoram).
+// Para trocar as especificações de um item, adicione `specs: ['linha 1', 'linha 2']` junto da mensagem.
+// Sem preços de propósito: o valor é confirmado no atendimento.
+// A foto do produto é achada pelo nome do arquivo: src/assets/produtos/<slug>.jpg
+export const PRODUCTS = [
+  // Pés
+  item('Pés', 'Bota Nobuck Marluvas', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota Nobuck Marluvas, número {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Pés', 'Bota Vulcaflex Bico de PVC', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota Vulcaflex Bico de PVC, número {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Pés', 'Bota Nobuck Bracol', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota Nobuck Bracol, número {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Pés', 'Bota de PVC', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota de PVC, número {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Pés', 'Bota Nobuck Premier', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota Nobuck Premier, número {tamanho}. Tem disponível? Qual o valor?',
+  }),
+
+  // Vestuário
+  item('Vestuário', 'Colete Refletivo', [], {
+    mensagem: 'Olá! Tenho interesse no Colete Refletivo. Tem em estoque? Qual o valor?',
+  }),
+  item('Vestuário', 'Capa de Chuva Amarela', ROUPA, {
+    mensagem: 'Olá! Tenho interesse na Capa de Chuva Amarela, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Vestuário', 'Cinta Ergonômica', ROUPA, {
+    mensagem: 'Olá! Tenho interesse na Cinta Ergonômica, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+
+  // Cabeça
+  item('Cabeça', 'Capacete c/ Catraca', [], {
+    mensagem: 'Olá! Tenho interesse no Capacete c/ Catraca. Tem em estoque? Qual o valor?',
+  }),
+  item('Cabeça', 'Capacete Camper', [], {
+    mensagem: 'Olá! Tenho interesse no Capacete Camper. Tem em estoque? Qual o valor?',
+  }),
+
+  // Mãos
+  item('Mãos', 'Luva Tátil Black', LUVA, {
+    mensagem: 'Olá! Tenho interesse na Luva Tátil Black, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Mãos', 'Luva Pigmentada', LUVA, {
+    mensagem: 'Olá! Tenho interesse na Luva Pigmentada, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Mãos', 'Luva Orange', LUVA, {
+    mensagem: 'Olá! Tenho interesse na Luva Orange, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Mãos', 'Luva Bicolor', LUVA, {
+    mensagem: 'Olá! Tenho interesse na Luva Bicolor, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Mãos', 'Luva Anti-Impacto', LUVA, {
+    mensagem: 'Olá! Tenho interesse na Luva Anti-Impacto, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Mãos', 'Luva de Vaqueta', LUVA, {
+    mensagem: 'Olá! Tenho interesse na Luva de Vaqueta, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Mãos', 'Luva Cut Smart', LUVA, {
+    mensagem: 'Olá! Tenho interesse na Luva Cut Smart, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Mãos', 'Luva Nitrílica', LUVA, {
+    mensagem: 'Olá! Tenho interesse na Luva Nitrílica, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+
+  // Visual
+  item('Visual', 'Óculos Incolor', [], {
+    mensagem: 'Olá! Tenho interesse no Óculos Incolor. Tem em estoque? Qual o valor?',
+  }),
+  item('Visual', 'Óculos Fumê', [], {
+    mensagem: 'Olá! Tenho interesse no Óculos Fumê. Tem em estoque? Qual o valor?',
+  }),
+
+  // Auditiva
+  item('Auditiva', 'Protetor Auricular Tipo Concha', [], {
+    mensagem: 'Olá! Tenho interesse no Protetor Auricular Tipo Concha. Tem em estoque? Qual o valor?',
+  }),
+  item('Auditiva', 'Protetor Auricular', [], {
+    mensagem: 'Olá! Tenho interesse no Protetor Auricular. Tem em estoque? Qual o valor?',
+  }),
+
+  // Altura
+  item('Altura', 'Cinto Paraquedista', [], {
+    mensagem: 'Olá! Tenho interesse no Cinto Paraquedista. Tem em estoque? Qual o valor?',
+  }),
+  item('Altura', 'Talabarte Fita “Y”', [], {
+    mensagem: 'Olá! Tenho interesse no Talabarte Fita “Y”. Tem em estoque? Qual o valor?',
+  }),
+];
+
+export const CATEGORIES = [...new Set(PRODUCTS.map((p) => p.cat))];
