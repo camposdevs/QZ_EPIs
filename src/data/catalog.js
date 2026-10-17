@@ -132,3 +132,16 @@ export const PRODUCTS = [
 ];
 
 export const CATEGORIES = [...new Set(PRODUCTS.map((p) => p.cat))];
+
+// Nome exibido de cada categoria. As chaves (Pés, Mãos etc.) continuam
+// iguais em PRODUCTS e MENSAGENS: elas são internas.
+const CATEGORY_LABELS = {
+  Pés: 'Proteção para os Pés',
+  Mãos: 'Proteção para as Mãos',
+  Cabeça: 'Proteção para a Cabeça',
+  Altura: 'Proteção para Altura',
+  Auditiva: 'Proteção Auditiva',
+  Visual: 'Proteção Visual',
+  Vestuário: 'Proteção Corporal',
+};
+export const categoryLabel = (cat) => CATEGORY_LABELS[cat] ?? cat;

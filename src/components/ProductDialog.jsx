@@ -5,7 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Photo from './Photo';
 import { getImage } from '../utils/images';
-import { buildMessage } from '../data/catalog';
+import { buildMessage, categoryLabel } from '../data/catalog';
 import { waLink } from '../utils/whatsapp';
 
 export default function ProductDialog({ product, onClose }) {
@@ -26,7 +26,7 @@ export default function ProductDialog({ product, onClose }) {
           <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: { xs: 3, md: 4 }, pt: { xs: 5, md: 0 } }}>
             <Photo src={getImage(`produtos/${product.slug}`)} alt={product.name} label={product.name} path={`src/assets/produtos/${product.slug}.jpg`} ratio="1 / 1" radius={2} />
             <Box>
-              <Typography variant="body2" color="primary.dark" fontWeight={600}>{product.cat}</Typography>
+              <Typography variant="body2" color="primary.dark" fontWeight={600}>{categoryLabel(product.cat)}</Typography>
               <Typography id="produto-titulo" variant="h2" component="h2" sx={{ mt: 0.5, mb: 2.5, pr: 5 }}>{product.name}</Typography>
               <Stack component="ul" spacing={1} sx={{ p: 0, m: 0, listStyle: 'none', color: 'text.secondary' }}>
                 {product.specs.map((s) => (
