@@ -45,20 +45,20 @@ const item = (cat, name, sizes = [], opts = {}) => ({
 // A foto do produto é achada pelo nome do arquivo: src/assets/produtos/<slug>.jpg
 export const PRODUCTS = [
   // Pés
+  item('Pés', 'Bota Premier Marluvas', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota Premier Marluvas, número {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Pés', 'Bota Nobuck Marluvas com Velcro', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota Nobuck Marluvas com Velcro, número {tamanho}. Tem disponível? Qual o valor?',
+  }),
   item('Pés', 'Bota Nobuck Marluvas', NUMEROS, {
     mensagem: 'Olá! Tenho interesse na Bota Nobuck Marluvas, número {tamanho}. Tem disponível? Qual o valor?',
-  }),
-  item('Pés', 'Bota Vulcaflex Bico de PVC', NUMEROS, {
-    mensagem: 'Olá! Tenho interesse na Bota Vulcaflex Bico de PVC, número {tamanho}. Tem disponível? Qual o valor?',
   }),
   item('Pés', 'Bota Nobuck Bracol', NUMEROS, {
     mensagem: 'Olá! Tenho interesse na Bota Nobuck Bracol, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota de PVC', NUMEROS, {
-    mensagem: 'Olá! Tenho interesse na Bota de PVC, número {tamanho}. Tem disponível? Qual o valor?',
-  }),
-  item('Pés', 'Bota Nobuck Premier', NUMEROS, {
-    mensagem: 'Olá! Tenho interesse na Bota Nobuck Premier, número {tamanho}. Tem disponível? Qual o valor?',
+  item('Pés', 'Bota Eletricista Marluvas', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota Eletricista Marluvas, número {tamanho}. Tem disponível? Qual o valor?',
   }),
 
   // Vestuário
