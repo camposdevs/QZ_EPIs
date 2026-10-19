@@ -22,6 +22,7 @@ const MENSAGENS = {
   Visual: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
   Auditiva: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
   Altura: (n) => `Olá! Quero saber sobre ${n}. Tem em estoque? Qual o valor?`,
+  //Sinalização: (n) => `Olá! Quero saber sobre ${n}. Tem em estoque? Qual o valor?`,
 };
 const MENSAGEM_PADRAO = (n, t) => `Olá! Tenho interesse em ${n}${t ? `, tamanho ${t}` : ''}. Qual o valor?`;
 export const buildMessage = (product, size) =>
@@ -153,6 +154,11 @@ export const PRODUCTS = [
   item('Altura', 'Talabarte Fita “Y”', [], {
     mensagem: 'Olá! Tenho interesse no Talabarte Fita “Y”. Tem em estoque? Qual o valor?',
   }),
+
+  //Sinalização e Delimitação
+  //item('Sinalização', 'Pedestal Plástico Zebrado', [], {
+    //mensagem: 'Olá! Tenho interesse no Pedestal Plástico Zebrado. Tem em estoque? Qual o valor?',
+  //}),
 ];
 
 export const CATEGORIES = [...new Set(PRODUCTS.map((p) => p.cat))];
@@ -163,9 +169,10 @@ const CATEGORY_LABELS = {
   Pés: 'Proteção para os Pés',
   Mãos: 'Proteção para as Mãos',
   Cabeça: 'Proteção para a Cabeça',
-  Altura: 'Proteção para Altura',
+  Altura: 'Trabalho em Altura',
   Auditiva: 'Proteção Auditiva',
   Visual: 'Proteção Visual',
   Vestuário: 'Proteção Corporal',
+  //Sinalização: 'Sinalização e Delimitação',
 };
 export const categoryLabel = (cat) => CATEGORY_LABELS[cat] ?? cat;
