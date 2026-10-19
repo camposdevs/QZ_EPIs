@@ -60,6 +60,15 @@ export const PRODUCTS = [
   item('Pés', 'Bota Eletricista Marluvas', NUMEROS, {
     mensagem: 'Olá! Tenho interesse na Bota Eletricista Marluvas, número {tamanho}. Tem disponível? Qual o valor?',
   }),
+  item('Pés', 'Bota de Borracha Preta Vulcaflez Cano Médio', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota de Borracha Preta Vulcaflez Cano Médio, número {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Pés', 'Bota de Borracha Branca Vulcaflez Cano Médio', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota de Borracha Branca Vulcaflez Cano Médio, número {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Pés', 'Bota de Bico de PVC Vulcaflez', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota de Bico de PVC Vulcaflez, número {tamanho}. Tem disponível? Qual o valor?',
+  }),
 
   // Vestuário
   item('Vestuário', 'Colete Refletivo', [], {
@@ -73,11 +82,26 @@ export const PRODUCTS = [
   }),
 
   // Cabeça
-  item('Cabeça', 'Capacete c/ Catraca', [], {
-    mensagem: 'Olá! Tenho interesse no Capacete c/ Catraca. Tem em estoque? Qual o valor?',
+  item('Cabeça', 'Capacete c/ Catraca Steelflex', [], {
+    mensagem: 'Olá! Tenho interesse no Capacete c/ Catraca Steelflex. Tem em estoque? Qual o valor?',
   }),
-  item('Cabeça', 'Capacete Camper', [], {
-    mensagem: 'Olá! Tenho interesse no Capacete Camper. Tem em estoque? Qual o valor?',
+  item('Cabeça', 'Capacete Camper Branco', [], {
+    mensagem: 'Olá! Tenho interesse no Capacete Camper Branco. Tem em estoque? Qual o valor?',
+  }),
+  item('Cabeça', 'Capacete Camper Azul ', [], {
+    mensagem: 'Olá! Tenho interesse no Capacete Camper Azul. Tem em estoque? Qual o valor?',
+  }),
+  item('Cabeça', 'Capacete Camper Laranja ', [], {
+    mensagem: 'Olá! Tenho interesse no Capacete Camper Laranja. Tem em estoque? Qual o valor?',
+  }),
+  item('Cabeça', 'Capacete Camper Verde', [], {
+    mensagem: 'Olá! Tenho interesse no Capacete Camper Verde. Tem em estoque? Qual o valor?',
+  }),
+  item('Cabeça', 'Capacete Camper Vermelho ', [], {
+    mensagem: 'Olá! Tenho interesse no Capacete Camper Vermelho. Tem em estoque? Qual o valor?',
+  }),
+  item('Cabeça', 'Capacete Camper Marrom ', [], {
+    mensagem: 'Olá! Tenho interesse no Capacete Camper Marrom. Tem em estoque? Qual o valor?',
   }),
 
   // Mãos
@@ -107,11 +131,11 @@ export const PRODUCTS = [
   }),
 
   // Visual
-  item('Visual', 'Óculos Incolor', [], {
-    mensagem: 'Olá! Tenho interesse no Óculos Incolor. Tem em estoque? Qual o valor?',
+  item('Visual', 'Óculos Incolor Steelflex', [], {
+    mensagem: 'Olá! Tenho interesse no Óculos Incolor Steelflex. Tem em estoque? Qual o valor?',
   }),
-  item('Visual', 'Óculos Fumê', [], {
-    mensagem: 'Olá! Tenho interesse no Óculos Fumê. Tem em estoque? Qual o valor?',
+  item('Visual', 'Óculos Fumê Steelflex', [], {
+    mensagem: 'Olá! Tenho interesse no Óculos Fumê Steelflex. Tem em estoque? Qual o valor?',
   }),
 
   // Auditiva
