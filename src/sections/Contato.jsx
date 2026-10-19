@@ -1,5 +1,6 @@
 import { Box, Button, Card, Container, Stack, TextField, Typography } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import InstagramIcon from '@mui/icons-material/Instagram'
 import { INSTAGRAM, PHONE_LABEL } from '../config';
 import { waLink, GENERIC_MESSAGE } from '../utils/whatsapp';
 
@@ -22,7 +23,7 @@ export default function Contato() {
             </Typography>
             <Stack direction="row" flexWrap="wrap" gap={1.5}>
               <Button size="large" variant="contained" color="whatsapp" startIcon={<WhatsAppIcon />} href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer">{PHONE_LABEL}</Button>
-              <Button size="large" variant="outlined" color="ink" href={`https://instagram.com/${INSTAGRAM}`} target="_blank" rel="noopener noreferrer">@{INSTAGRAM}</Button>
+              <Button size="large" variant="outlined" color="ink" startIcon={<InstagramIcon />} href={`https://instagram.com/${INSTAGRAM}`} target="_blank" rel="noopener noreferrer">@{INSTAGRAM}</Button>
             </Stack>
           </Box>
           <Card component="form" onSubmit={onSubmit} sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: 3, display: 'grid', gap: 2 }}>
