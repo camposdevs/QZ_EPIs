@@ -3,13 +3,13 @@
 O site acha a foto pelo nome do arquivo (sem a extensão). Aceita .jpg, .jpeg, .png e .webp. Se a foto existir, ela aparece sozinha no lugar do espaço tracejado.
 
 ## Geral (src/assets)
-- hero.jpg: fachada ou balcão da loja (1200 x 960 px)
+- balcao.jpg: balcão da loja (1200 x 960 px)
 - faixa.jpg: foto larga do interior ou estoque (1600 x 700 px)
 - logo.png: logo da loja (já está)
 
 ## Lojas (src/assets/lojas)
 - mutinga.jpg: Loja 1 (Mutinga)
-- loja-2.jpg: Loja 2 ((bairro))
+- rochdale.jpg: Loja 2 (Rochdale)
 
 ## Marcas (src/assets/marcas)
 - marluvas.png: Marluvas

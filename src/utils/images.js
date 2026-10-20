@@ -1,5 +1,5 @@
 // Carrega tudo de src/assets automaticamente. A chave é o caminho sem extensão:
-// "produtos/bota-nobuck-marluvas", "marcas/marluvas", "lojas/mutinga", "hero", "faixa", "logo".
+// "produtos/bota-nobuck-marluvas", "marcas/marluvas", "lojas/mutinga", "balcao", "faixa", "logo".
 const files = import.meta.glob('../assets/**/*.{jpg,jpeg,png,webp,svg}', {
   eager: true,
   query: '?url',

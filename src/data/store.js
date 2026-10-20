@@ -11,11 +11,11 @@ export const STORES = [
     horario: 'Segunda a sexta, (preencher horário)',
   },
   {
-    slug: 'loja-2',
+    slug: 'rochdale',
     tag: 'Loja 2',
-    nome: '(bairro)',
-    endereco: '(endereço da segunda loja)',
-    cidade: 'Osasco, SP',
+    nome: 'Rochdale',
+    endereco: 'Av. Brasil, 1418',
+    cidade: 'Rochdale, Osasco, SP, 06220-050',
     horario: 'Segunda a sexta, (preencher horário)',
   },
 ];

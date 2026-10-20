@@ -22,13 +22,28 @@ export default function Catalog({ category, onCategory }) {
 
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))', gap: 2 }}>
         {list.map((p) => (
-          <Card key={p.slug} sx={{ '&:hover': { borderColor: 'primary.main' }, transition: 'border-color .2s' }}>
-            <CardActionArea onClick={() => setSelected(p)} sx={{ p: 1.25, height: 1 }}>
-              <Photo src={getImage(`produtos/${p.slug}`)} alt={p.name} label={p.name} path={`src/assets/produtos/${p.slug}.jpg`} ratio="1 / 1" radius={1.5} />
-              <Box sx={{ px: 1.25, pt: 1.75, pb: 1 }}>
+          <Card key={p.slug} sx={{ display: 'flex', '&:hover': { borderColor: 'primary.main' }, transition: 'border-color .2s' }}>
+            <CardActionArea
+              onClick={() => setSelected(p)}
+              sx={{ p: 1.25, display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'flex-start' }}
+            >
+              <Photo
+                src={getImage(`produtos/${p.slug}`)}
+                alt={p.name}
+                label={p.name}
+                path={`src/assets/produtos/${p.slug}.jpg`}
+                ratio="1 / 1"
+                radius={1.5}
+                sx={{ flexShrink: 0 }}
+              />
+              <Box sx={{ px: 1.25, pt: 1.75, pb: 1, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <Typography variant="body2" color="primary.dark" fontWeight={600}>{categoryLabel(p.cat)}</Typography>
                 <Typography variant="h4" component="h3" sx={{ my: 0.75 }}>{p.name}</Typography>
-                <Typography variant="body2" fontWeight={700} sx={{ textDecoration: 'underline', textDecorationColor: (t) => t.palette.primary.main, textUnderlineOffset: 4, textDecorationThickness: 2 }}>
+                <Typography
+                  variant="body2"
+                  fontWeight={700}
+                  sx={{ mt: 'auto', pt: 1, alignSelf: 'flex-start', textDecoration: 'underline', textDecorationColor: (t) => t.palette.primary.main, textUnderlineOffset: 4, textDecorationThickness: 2 }}
+                >
                   Pedir no WhatsApp
                 </Typography>
               </Box>

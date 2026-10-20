@@ -52,7 +52,7 @@ Site de catálogo da QZ EPIs, loja de Equipamentos de Proteção Individual em O
 QZ_EPIs/
 ├── public/               # Favicon
 ├── src/
-│   ├── assets/           # Fotos (logo, hero, faixa, lojas, marcas, produtos)
+│   ├── assets/           # Fotos (logo, balcao, faixa, lojas, marcas, produtos)
 │   ├── components/       # Header, Footer, Photo, Section, ProductDialog, WhatsAppFab
 │   ├── data/
 │   │   ├── catalog.js    # Produtos, categorias, tamanhos e mensagens
@@ -103,7 +103,7 @@ O site encontra a foto pelo nome do arquivo (sem a extensão), aceitando `.jpg`,
 
 | Tipo | Pasta | Exemplo |
 | --- | --- | --- |
-| Geral | `src/assets/` | `hero.jpg` (1200 x 960 px), `faixa.jpg` (1600 x 700 px), `logo.png` |
+| Geral | `src/assets/` | `balcao.jpg` (1200 x 960 px), `faixa.jpg` (1600 x 700 px), `logo.png` |
 | Lojas | `src/assets/lojas/` | `mutinga.jpeg` |
 | Marcas | `src/assets/marcas/` | `marluvas.png` |
 | Produtos | `src/assets/produtos/` | `luva-orange.jpeg` |

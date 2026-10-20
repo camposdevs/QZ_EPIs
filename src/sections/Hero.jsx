@@ -26,7 +26,7 @@ export default function Hero() {
               <Button size="large" variant="outlined" color="ink" href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer">Falar com a loja</Button>
             </Stack>
           </Box>
-          <Photo src={getImage('hero')} alt="Fachada da loja QZ EPIs" label="Fachada ou balcão da loja (1200 × 960 px)" path="src/assets/hero.jpg" ratio="5 / 4" radius={3} />
+          <Photo src={getImage('balcao')} alt="Balcão da loja QZ EPIs" label="Balcão da loja (1200 × 960 px)" path="src/assets/balcao.jpg" ratio="5 / 4" radius={3} />
         </Box>
 
         <Stack direction="row" divider={<Divider orientation="vertical" flexItem />} spacing={{ xs: 2, md: 5 }} sx={{ mt: { xs: 4, md: 7 }, pt: 3, borderTop: 1, borderColor: 'divider' }}>
