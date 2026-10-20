@@ -14,7 +14,26 @@ export default function Catalog({ category, onCategory }) {
 
   return (
     <Section id="catalogo" title="O que você procura?" subtitle="Toque no produto, escolha o tamanho e envie o pedido. Valores e disponibilidade a gente confirma no WhatsApp.">
-      <Stack direction="row" gap={1} role="group" aria-label="Filtrar por linha" sx={{ overflowX: 'auto', pb: 1, mb: 3 }}>
+      <Stack
+        direction="row"
+        gap={1}
+        role="group"
+        aria-label="Filtrar por linha"
+        sx={{
+          overflowX: 'auto',
+          pb: 1,
+          mb: 3,
+          // Firefox
+          scrollbarWidth: 'thin',
+          scrollbarColor: '#32291d transparent',
+          // Chrome / Edge / Safari
+          '&::-webkit-scrollbar': { height: 6 },
+          '&::-webkit-scrollbar-track': { background: 'transparent' },
+          '&::-webkit-scrollbar-thumb': { background: '#32291d', borderRadius: 999 },
+          '&::-webkit-scrollbar-thumb:hover': { background: '#e8892b' },
+          '&::-webkit-scrollbar-button': { display: 'none' },
+        }}
+      >
         {[ALL, ...CATEGORIES].map((c) => (
           <Chip key={c} label={c === ALL ? ALL : categoryLabel(c)} clickable onClick={() => onCategory(c)} color={category === c ? 'primary' : 'default'} variant={category === c ? 'filled' : 'outlined'} sx={{ px: 0.5, height: 40, flexShrink: 0 }} />
         ))}
