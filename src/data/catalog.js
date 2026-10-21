@@ -192,6 +192,9 @@ export const PRODUCTS = [
   item('Sinalização', 'Pedestal Plástico Zebrado', [], {
     mensagem: 'Olá! Tenho interesse no Pedestal Plástico Zebrado. Tem em estoque? Qual o valor?',
   }),
+  item('Sinalização', 'Cone de sinalização', [], {
+    mensagem: 'Olá! Tenho interesse no Cone de sinalização. Tem em estoque? Qual o valor?',
+  } )
 ];
 
 export const CATEGORIES = [...new Set(PRODUCTS.map((p) => p.cat))];
