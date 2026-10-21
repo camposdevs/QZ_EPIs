@@ -22,6 +22,7 @@ const MENSAGENS = {
   Visual: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
   Auditiva: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
   Altura: (n) => `Olá! Quero saber sobre ${n}. Tem em estoque? Qual o valor?`,
+  Pele: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
   Sinalização: (n) => `Olá! Quero saber sobre ${n}. Tem em estoque? Qual o valor?`,
 };
 const MENSAGEM_PADRAO = (n, t) => `Olá! Tenho interesse em ${n}${t ? `, tamanho ${t}` : ''}. Qual o valor?`;
@@ -70,6 +71,9 @@ export const PRODUCTS = [
   item('Pés', 'Bota de Bico de PVC Vulcaflez', NUMEROS, {
     mensagem: 'Olá! Tenho interesse na Bota de Bico de PVC Vulcaflez, número {tamanho}. Tem disponível? Qual o valor?',
   }),
+  item('Pés', 'Meias', [], {
+    mensagem: 'Olá! Tenho interesse em Meias. Tem em estoque? Qual o valor?',
+  }),
 
   // Vestuário
   item('Vestuário', 'Colete Refletivo', [], {
@@ -80,6 +84,12 @@ export const PRODUCTS = [
   }),
   item('Vestuário', 'Cinta Ergonômica', ROUPA, {
     mensagem: 'Olá! Tenho interesse na Cinta Ergonômica, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  }),
+  item('Vestuário', 'Capa de Chuva EVA', [], {
+    mensagem: 'Olá! Tenho interesse na Capa de Chuva EVA. Tem em estoque? Qual o valor?',
+  }),
+  item('Vestuário', 'Conjunto Motociclista', ROUPA, {
+    mensagem: 'Olá! Tenho interesse no Conjunto Motociclista, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
 
   // Cabeça
@@ -130,6 +140,9 @@ export const PRODUCTS = [
   item('Mãos', 'Luva Nitrílica', LUVA, {
     mensagem: 'Olá! Tenho interesse na Luva Nitrílica, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
+  item('Mãos', 'Luva de PVC Verde', [], {
+    mensagem: 'Olá! Tenho interesse na Luva de PVC Verde. Tem em estoque? Qual o valor?',
+  }),
 
   // Visual
   item('Visual', 'Óculos Incolor Steelflex', [], {
@@ -140,8 +153,11 @@ export const PRODUCTS = [
   }),
 
   // Auditiva
-  item('Auditiva', 'Protetor Auricular Tipo Concha', [], {
-    mensagem: 'Olá! Tenho interesse no Protetor Auricular Tipo Concha. Tem em estoque? Qual o valor?',
+  item('Auditiva', 'Protetor Auricular Tipo Concha Soft Slim', [], {
+    mensagem: 'Olá! Tenho interesse no Protetor Auricular Tipo Concha Soft Slim. Tem em estoque? Qual o valor?',
+  }),
+  item('Auditiva', 'Protetor Auricular Tipo Concha Comfort Plus', [], {
+    mensagem: 'Olá! Tenho interesse no Protetor Auricular Tipo Concha Comfort Plus. Tem em estoque? Qual o valor?',
   }),
   item('Auditiva', 'Protetor Auricular', [], {
     mensagem: 'Olá! Tenho interesse no Protetor Auricular. Tem em estoque? Qual o valor?',
@@ -153,6 +169,20 @@ export const PRODUCTS = [
   }),
   item('Altura', 'Talabarte Fita “Y”', [], {
     mensagem: 'Olá! Tenho interesse no Talabarte Fita “Y”. Tem em estoque? Qual o valor?',
+  }),
+  item('Altura', 'Cinto de 4 Pontos', [], {
+    mensagem: 'Olá! Tenho interesse no Cinto de 4 Pontos. Tem em estoque? Qual o valor?',
+  }),
+
+  // Pele
+  item('Pele', 'Protetor Solar 2kg FPS 30', [], {
+    mensagem: 'Olá! Tenho interesse no Protetor Solar 2kg FPS 30. Tem em estoque? Qual o valor?',
+  }),
+  item('Pele', 'Protetor Solar 2kg FPS 60', [], {
+    mensagem: 'Olá! Tenho interesse no Protetor Solar 2kg FPS 60. Tem em estoque? Qual o valor?',
+  }),
+  item('Pele', 'Creme Protetor para as Mãos', [], {
+    mensagem: 'Olá! Tenho interesse no Creme Protetor para as Mãos. Tem em estoque? Qual o valor?',
   }),
 
   //Sinalização e Delimitação
@@ -173,6 +203,7 @@ const CATEGORY_LABELS = {
   Auditiva: 'Proteção Auditiva',
   Visual: 'Proteção Visual',
   Vestuário: 'Proteção Corporal',
+  Pele: 'Proteção para a Pele',
   Sinalização: 'Sinalização e Delimitação',
 };
 export const categoryLabel = (cat) => CATEGORY_LABELS[cat] ?? cat;
