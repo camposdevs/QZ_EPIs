@@ -28,14 +28,16 @@ export default function ProductDialog({ product, onClose }) {
             <Box>
               <Typography variant="body2" color="primary.dark" fontWeight={600}>{categoryLabel(product.cat)}</Typography>
               <Typography id="produto-titulo" variant="h2" component="h2" sx={{ mt: 0.5, mb: 2.5, pr: 5 }}>{product.name}</Typography>
-              <Stack component="ul" spacing={1} sx={{ p: 0, m: 0, listStyle: 'none', color: 'text.secondary' }}>
-                {product.specs.map((s) => (
-                  <Typography key={s} component="li" variant="body2" sx={{ display: 'flex', gap: 1.25, alignItems: 'baseline' }}>
-                    <Box component="span" sx={{ width: 8, height: 8, borderRadius: 0.5, bgcolor: 'primary.main', flexShrink: 0 }} />
-                    {s}
-                  </Typography>
-                ))}
-              </Stack>
+              {product.specs.length > 0 && (
+                <Stack component="ul" spacing={1} sx={{ p: 0, m: 0, listStyle: 'none', color: 'text.secondary' }}>
+                  {product.specs.map((s) => (
+                    <Typography key={s} component="li" variant="body2" sx={{ display: 'flex', gap: 1.25, alignItems: 'baseline' }}>
+                      <Box component="span" sx={{ width: 8, height: 8, borderRadius: 0.5, bgcolor: 'primary.main', flexShrink: 0 }} />
+                      {s}
+                    </Typography>
+                  ))}
+                </Stack>
+              )}
               {product.sizes.length > 0 && (
                 <Box sx={{ mt: 3 }}>
                   <Typography variant="body2" fontWeight={700} sx={{ mb: 1.25 }}>Escolha o tamanho</Typography>

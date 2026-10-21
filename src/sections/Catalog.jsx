@@ -20,7 +20,8 @@ export default function Catalog({ category, onCategory }) {
         role="group"
         aria-label="Filtrar por linha"
         sx={{
-          overflowX: 'auto',
+          flexWrap: { xs: 'nowrap', md: 'wrap' },
+          overflowX: { xs: 'auto', md: 'visible' },
           pb: 1,
           mb: 3,
           // Firefox
