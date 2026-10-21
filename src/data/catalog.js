@@ -23,6 +23,7 @@ const MENSAGENS = {
   Auditiva: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
   Altura: (n) => `Olá! Quero saber sobre ${n}. Tem em estoque? Qual o valor?`,
   Pele: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
+  Meias: (n) => `Olá! Tenho interesse em ${n}. Tem em estoque? Qual o valor?`,
   Sinalização: (n) => `Olá! Quero saber sobre ${n}. Tem em estoque? Qual o valor?`,
 };
 const MENSAGEM_PADRAO = (n, t) => `Olá! Tenho interesse em ${n}${t ? `, tamanho ${t}` : ''}. Qual o valor?`;
@@ -70,9 +71,6 @@ export const PRODUCTS = [
   }),
   item('Pés', 'Bota de Bico de PVC Vulcaflez', NUMEROS, {
     mensagem: 'Olá! Tenho interesse na Bota de Bico de PVC Vulcaflez, número {tamanho}. Tem disponível? Qual o valor?',
-  }),
-  item('Pés', 'Meias', [], {
-    mensagem: 'Olá! Tenho interesse em Meias. Tem em estoque? Qual o valor?',
   }),
 
   // Vestuário
@@ -185,7 +183,12 @@ export const PRODUCTS = [
     mensagem: 'Olá! Tenho interesse no Creme Protetor para as Mãos. Tem em estoque? Qual o valor?',
   }),
 
-  //Sinalização e Delimitação
+  // Meias
+  item('Meias', 'Meias', [], {
+    mensagem: 'Olá! Tenho interesse em Meias. Tem em estoque? Qual o valor?',
+  }),
+
+  // Sinalização e Delimitação
   item('Sinalização', 'Pedestal Plástico Zebrado', [], {
     mensagem: 'Olá! Tenho interesse no Pedestal Plástico Zebrado. Tem em estoque? Qual o valor?',
   }),
@@ -204,6 +207,7 @@ const CATEGORY_LABELS = {
   Visual: 'Proteção Visual',
   Vestuário: 'Proteção Corporal',
   Pele: 'Proteção para a Pele',
+  Meias: 'Meias',
   Sinalização: 'Sinalização e Delimitação',
 };
 export const categoryLabel = (cat) => CATEGORY_LABELS[cat] ?? cat;
