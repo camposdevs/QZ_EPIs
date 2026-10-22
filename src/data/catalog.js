@@ -1,8 +1,9 @@
+import { SPECS } from './specs';
 const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => String(a + i));
 const NUMEROS = range(36, 46);
 const ROUPA = ['P', 'M', 'G', 'GG'];
 const LUVA = ['P', 'M', 'G'];
-const SPEC_PADRAO = ['Especificações: (preencher)', 'Número do CA: (preencher)'];
+const SPEC_PADRAO = [];
 
 export const slugify = (text) =>
   text
@@ -32,14 +33,10 @@ export const buildMessage = (product, size) =>
     ? product.mensagem.replaceAll('{tamanho}', size ?? '').replaceAll('{produto}', product.name)
     : (MENSAGENS[product.cat] ?? MENSAGEM_PADRAO)(product.name, size);
 
-const item = (cat, name, sizes = [], opts = {}) => ({
-  cat,
-  name,
-  sizes,
-  slug: slugify(name),
-  specs: opts.specs ?? SPEC_PADRAO,
-  mensagem: opts.mensagem,
-});
+const item = (cat, name, sizes = [], opts = {}) => {
+  const slug = slugify(name);
+  return { cat, name, sizes, slug, specs: opts.specs ?? SPECS[slug] ?? SPEC_PADRAO, mensagem: opts.mensagem };
+};
 
 // Mensagem de cada item do WhatsApp: edite o texto de cada produto abaixo.
 // Use {tamanho} onde o tamanho escolhido deve entrar (itens sem tamanho ignoram).
