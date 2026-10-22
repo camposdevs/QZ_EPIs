@@ -7,7 +7,7 @@ export default function Footer() {
       <Container maxWidth="lg">
         <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" spacing={2}>
           <Box>
-            <Typography variant="h4">QZ EPIs</Typography>
+            <Typography variant="h4">QZ EPI</Typography>
             <Typography variant="body2" sx={{ opacity: 0.75 }}>Loja de equipamentos de segurança de uso individual.</Typography>
           </Box>
           <Typography variant="body2" sx={{ opacity: 0.9 }}>

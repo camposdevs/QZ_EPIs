@@ -31,7 +31,7 @@ export default function Header() {
       <Toolbar sx={{ gap: 2, minHeight: 72, maxWidth: 1200, width: 1, mx: 'auto' }}>
         <Stack component="a" href="#inicio" direction="row" alignItems="center" spacing={1.5} sx={{ mr: 'auto', textDecoration: 'none', color: 'text.primary' }}>
           {logo && <Box component="img" src={logo} alt="" sx={{ width: 44, height: 44, borderRadius: 1.5 }} />}
-          <Typography variant="h4" component="span">QZ EPIs</Typography>
+          <Typography variant="h4" component="span">QZ EPI</Typography>
         </Stack>
 
         <Stack component="nav" aria-label="Seções" direction="row" spacing={0.5} sx={{ display: { xs: 'none', md: 'flex' } }}>
