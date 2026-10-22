@@ -15,7 +15,7 @@ export const STORES = [
     tag: 'Loja 2',
     nome: 'Rochdale',
     endereco: 'Av. Brasil, 1418',
-    cidade: 'Rochdale, Osasco, SP, 06220-050',
+    cidade: 'Rochdale, Osasco',
     horario: 'Segunda a sexta, (preencher horário)',
   },
 ];
