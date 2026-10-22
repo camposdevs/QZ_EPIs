@@ -138,6 +138,9 @@ export const PRODUCTS = [
   item('Mãos', 'Luva de PVC Verde', [], {
     mensagem: 'Olá! Tenho interesse na Luva de PVC Verde. Tem em estoque? Qual o valor?',
   }),
+  item('Mãos', 'Luva VdBNit Lona', LUVA, {
+    mensagem: 'Olá! Tenho interesse na Luva VdBNit Lona. Tem em estoque? Qual o valor?',
+  }),
 
   // Visual
   item('Visual', 'Óculos Incolor Steelflex', [], {
@@ -159,7 +162,7 @@ export const PRODUCTS = [
   }),
 
   // Altura
-  item('Altura', 'Cinto Paraquedista', [], {
+  item('Altura', 'Cinto Paraquedista 1 ponto', [], {
     mensagem: 'Olá! Tenho interesse no Cinto Paraquedista. Tem em estoque? Qual o valor?',
   }),
   item('Altura', 'Talabarte Fita “Y”', [], {
