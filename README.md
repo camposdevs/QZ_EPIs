@@ -4,7 +4,7 @@
 
 **Um catálogo online simples, rápido e direto ao ponto: o cliente escolhe o produto e fala com a loja pelo WhatsApp.**
 
-Site de catálogo da QZ EPIs, loja de Equipamentos de Proteção Individual em Osasco, SP, com produtos por categoria, tamanhos, marcas, lojas, contato e pedido pelo WhatsApp com a mensagem já pronta.
+Site de catálogo da QZ EPI, loja de Equipamentos de Proteção Individual em Osasco, SP, com produtos por categoria, tamanhos, marcas, lojas, contato e pedido pelo WhatsApp com a mensagem já pronta.
 
 <br>
 
@@ -134,3 +134,25 @@ Itens marcados com "(preencher)" no código:
 - WhatsApp: (11) 93091-1928
 - Instagram: [@quinzeiro.epi](https://instagram.com/quinzeiro.epi)
 - Loja 1: Av. Presidente Médici, 1600, Mutinga, Osasco, SP
+
+## Orçamento
+
+Cada produto tem "Adicionar ao orçamento" (tamanho e quantidade). A lista fica salva no navegador, aparece no botão "Meu orçamento" do topo e na seção "Peça seu orçamento". Ao enviar, a lista vai organizada na mensagem do WhatsApp, junto com nome, empresa/CNPJ, loja de retirada e nota fiscal. A mensagem é montada em `src/utils/quote.js`.
+
+## Fotos
+
+Os nomes de cada foto estão em `FOTOS.md`. Para padronizar o formato e reduzir o peso:
+
+```bash
+npm run fotos
+```
+
+Produtos viram quadrado (até 1000 px) e as lojas ficam em 16:10. Os originais vão para `fotos-originais/` (ignorada pelo Git).
+
+## Contagem de cliques (opcional)
+
+Crie uma propriedade no Google Analytics 4 e coloque o ID (G-XXXXXXXXXX) na variável `VITE_GA_ID` (`.env` local e Netlify). Eventos enviados: `whatsapp_click`, `add_to_quote`, `quote_sent`, `instagram_click` e `como_chegar_click`.
+
+## Prévia do link no WhatsApp
+
+A imagem fica em `public/og.jpg` e as tags estão no `index.html`. Se o endereço do site mudar, troque `qzepis.netlify.app` nessas tags.
