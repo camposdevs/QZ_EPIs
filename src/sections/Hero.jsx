@@ -22,7 +22,7 @@ export default function Hero() {
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
               <Button size="large" variant="contained" href="#catalogo">Ver produtos</Button>
               <Button size="large" variant="outlined" color="ink" onClick={openDrawer}>Montar orçamento</Button>
-              <Button size="large" variant="text" color="ink" href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click', { origem: 'hero' })}>
+              <Button size="large" variant="outlined" color="ink" href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click', { origem: 'hero' })}>
                 Falar no WhatsApp
               </Button>
             </Box>

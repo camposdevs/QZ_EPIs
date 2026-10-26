@@ -61,14 +61,14 @@ export const PRODUCTS = [
   item('Pés', 'Bota Eletricista Marluvas', NUMEROS, {
     mensagem: 'Olá! Tenho interesse na Bota Eletricista Marluvas, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota de Borracha Preta Vulcaflez Cano Médio', NUMEROS, {
-    mensagem: 'Olá! Tenho interesse na Bota de Borracha Preta Vulcaflez Cano Médio, número {tamanho}. Tem disponível? Qual o valor?',
+  item('Pés', 'Bota de Borracha Preta Vulcaflex Cano Médio', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota de Borracha Preta Vulcaflex Cano Médio, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota de Borracha Branca Vulcaflez Cano Médio', NUMEROS, {
-    mensagem: 'Olá! Tenho interesse na Bota de Borracha Branca Vulcaflez Cano Médio, número {tamanho}. Tem disponível? Qual o valor?',
+  item('Pés', 'Bota de Borracha Branca Vulcaflex Cano Médio', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota de Borracha Branca Vulcaflex Cano Médio, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota de Bico de PVC Vulcaflez', NUMEROS, {
-    mensagem: 'Olá! Tenho interesse na Bota de Bico de PVC Vulcaflez, número {tamanho}. Tem disponível? Qual o valor?',
+  item('Pés', 'Bota de Bico de PVC Vulcaflex', NUMEROS, {
+    mensagem: 'Olá! Tenho interesse na Bota de Bico de PVC Vulcaflex, número {tamanho}. Tem disponível? Qual o valor?',
   }),
 
   // Vestuário

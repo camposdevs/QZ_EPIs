@@ -35,21 +35,21 @@ export const SPECS = {
     'Numeração: 36 ao 46',
     // 'CA 00000',
   ],
-  'bota-de-borracha-preta-vulcaflez-cano-medio': [
+  'bota-de-borracha-preta-vulcaflex-cano-medio': [
     'Bota de borracha na cor preta',
     'Cano médio',
     'Impermeável, indicada para ambientes molhados e úmidos',
     'Numeração: 36 ao 46',
     // 'CA 00000',
   ],
-  'bota-de-borracha-branca-vulcaflez-cano-medio': [
+  'bota-de-borracha-branca-vulcaflex-cano-medio': [
     'Bota de borracha na cor branca',
     'Cano médio',
     'Impermeável, indicada para ambientes molhados e úmidos',
     'Numeração: 36 ao 46',
     // 'CA 00000',
   ],
-  'bota-de-bico-de-pvc-vulcaflez': [
+  'bota-de-bico-de-pvc-vulcaflex': [
     'Botina de couro com elástico lateral',
     'Biqueira (bico) de PVC',
     'Numeração: 36 ao 46',
