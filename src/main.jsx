@@ -9,12 +9,18 @@ import '@fontsource/barlow-condensed/700.css';
 import '@fontsource/barlow-condensed/800.css';
 import theme from './theme';
 import App from './App';
+import { QuoteProvider } from './context/QuoteContext';
+import { initAnalytics } from './utils/analytics';
+
+initAnalytics();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <App />
+      <QuoteProvider>
+        <App />
+      </QuoteProvider>
     </ThemeProvider>
   </StrictMode>,
 );
