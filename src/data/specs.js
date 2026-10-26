@@ -257,11 +257,15 @@ export const SPECS = {
     'Forma uma barreira de proteção nas mãos',
     // 'CA 00000',
   ],
-  'meias': [
-    'Meias para uso com botas e botinas',
+   'meia-dalf-cano-curto': [
+    'Meia Dalf de cano curto',
     'Conforto durante a jornada de trabalho',
-    // 'CA 00000',
   ],
+  'meia-dalf-fun-casual': [
+    'Meia Dalf Fun Casual',
+    'Indicada para uso com botas e botinas',
+  ],
+
   'pedestal-plastico-zebrado': [
     'Pedestal plástico zebrado',
     'Usado com corrente ou fita para delimitar áreas',

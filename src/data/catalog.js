@@ -188,8 +188,11 @@ export const PRODUCTS = [
   }),
 
   // Meias
-  item('Meias', 'Meias', [], {
-    mensagem: 'Olá! Tenho interesse em Meias. Tem em estoque? Qual o valor?',
+  item('Pés', 'Meia Dallf Cano Curto', [], {
+  mensagem: 'Olá! Tenho interesse na Meia Dallf Cano Curto. Tem disponível? Qual o valor?',
+  }),
+  item('Pés', 'Meia Dallf Fun Casual', [], {
+    mensagem: 'Olá! Tenho interesse na Meia Dallf Fun Casual. Tem disponível? Qual o valor?',
   }),
 
   // Sinalização e Delimitação
