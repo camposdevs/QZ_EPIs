@@ -29,7 +29,20 @@ export default function Contato() {
               <Button size="large" variant="outlined" color="whatsapp" startIcon={<WhatsAppIcon />} href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click', { origem: 'contato' })}>
                 {PHONE_LABEL}
               </Button>
-              <Button size="large" variant="outlined" color="ink" startIcon={<InstagramIcon />} href={`https://instagram.com/${INSTAGRAM}`} target="_blank" rel="noopener noreferrer" onClick={() => track('instagram_click', { origem: 'contato' })}>
+              <Button
+                size="large"
+                variant="contained"
+                startIcon={<InstagramIcon />}
+                href={`https://instagram.com/${INSTAGRAM}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track('instagram_click', { origem: 'contato' })}
+                sx={{
+                  color: '#fff',
+                  background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+                  '&:hover': { filter: 'brightness(1.12)' },
+                }}
+              >
                 @{INSTAGRAM}
               </Button>
             </Stack>
