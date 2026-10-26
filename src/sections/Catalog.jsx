@@ -45,7 +45,7 @@ export default function Catalog({ category, onCategory }) {
           <Card key={p.slug} sx={{ display: 'flex', '&:hover': { borderColor: 'primary.main' }, transition: 'border-color .2s' }}>
             <CardActionArea
               onClick={() => setSelected(p)}
-              sx={{ p: 1.25, display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'flex-start' }}
+              sx={{ p: 1, display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'flex-start' }}
             >
               <Photo
                 src={getImage(`produtos/${p.slug}`)}
@@ -53,19 +53,13 @@ export default function Catalog({ category, onCategory }) {
                 label={p.name}
                 path={`src/assets/produtos/${p.slug}.jpg`}
                 ratio="1 / 1"
-                radius={1.5}
+                radius={0.5}
                 sx={{ flexShrink: 0 }}
               />
-              <Box sx={{ px: 1.25, pt: 1.75, pb: 1, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <Typography variant="body2" color="primary.dark" fontWeight={600}>{categoryLabel(p.cat)}</Typography>
-                <Typography variant="h4" component="h3" sx={{ my: 0.75 }}>{p.name}</Typography>
-                <Typography
-                  variant="body2"
-                  fontWeight={700}
-                  sx={{ mt: 'auto', pt: 1, alignSelf: 'flex-start', textDecoration: 'underline', textDecorationColor: (t) => t.palette.primary.main, textUnderlineOffset: 4, textDecorationThickness: 2 }}
-                >
-                  Pedir no WhatsApp
-                </Typography>
+              <Box sx={{ px: 0.75, pt: 1.5, pb: 0.75, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <Typography variant="caption" color="text.secondary">{categoryLabel(p.cat)}</Typography>
+                <Typography component="h3" sx={{ fontWeight: 600, fontSize: '1.02rem', lineHeight: 1.3, my: 0.5 }}>{p.name}</Typography>
+                <Typography variant="body2" fontWeight={700} color="primary.main" sx={{ mt: 'auto', pt: 1 }}>Ver detalhes</Typography>
               </Box>
             </CardActionArea>
           </Card>

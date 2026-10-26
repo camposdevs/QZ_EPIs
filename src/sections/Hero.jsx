@@ -1,42 +1,50 @@
-import { Box, Button, Container, Divider, Stack, Typography } from '@mui/material';
+import { Box, Button, Container, Typography } from '@mui/material';
 import Photo from '../components/Photo';
 import { getImage } from '../utils/images';
 import { waLink, GENERIC_MESSAGE } from '../utils/whatsapp';
-import { PRODUCTS } from '../data/catalog';
+import { useQuote } from '../context/QuoteContext';
 import { STORES } from '../data/store';
-
-const FACTS = [
-  { value: STORES.length, label: 'lojas em Osasco' },
-  { value: PRODUCTS.length, label: 'produtos no catálogo' },
-  { value: 'Seg a sex', label: 'atendimento' },
-];
+import { PHONE_LABEL } from '../config';
+import { track } from '../utils/analytics';
 
 export default function Hero() {
+  const { openDrawer } = useQuote();
+
   return (
     <Box component="section" id="inicio" sx={{ pt: { xs: 4, md: 7 }, pb: { xs: 5, md: 8 } }}>
       <Container maxWidth="lg">
-        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1.05fr 0.95fr' }, gap: { xs: 4, md: 6 }, alignItems: 'center' }}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1.1fr 0.9fr' }, gap: { xs: 4, md: 7 }, alignItems: 'center' }}>
           <Box>
-            <Typography variant="h1" component="h1">Equipamentos de proteção para quem trabalha de verdade</Typography>
-            <Typography color="text.secondary" sx={{ mt: 3, mb: 4, maxWidth: '46ch', fontSize: '1.15rem' }}>
-              Botas, luvas, capacetes, óculos e mais, em duas lojas em Osasco. Escolha o produto e o tamanho e continue o atendimento no WhatsApp.
+            <Typography variant="h1" component="h1">Equipamentos de proteção individual em Osasco</Typography>
+            <Typography color="text.secondary" sx={{ mt: 3, mb: 4, maxWidth: '48ch', fontSize: '1.1rem' }}>
+              Botas, luvas, capacetes, óculos, protetores e mais, em duas lojas. Escolha os produtos, monte seu orçamento e finalize pelo WhatsApp.
             </Typography>
-            <Stack direction="row" flexWrap="wrap" gap={1.5}>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
               <Button size="large" variant="contained" href="#catalogo">Ver produtos</Button>
-              <Button size="large" variant="outlined" color="ink" href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer">Falar com a loja</Button>
-            </Stack>
+              <Button size="large" variant="outlined" color="ink" onClick={openDrawer}>Montar orçamento</Button>
+              <Button size="large" variant="text" color="ink" href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click', { origem: 'hero' })}>
+                Falar no WhatsApp
+              </Button>
+            </Box>
           </Box>
-          <Photo src={getImage('balcao')} alt="Balcão da loja QZ EPIs" label="Balcão da loja (1200 × 960 px)" path="src/assets/balcao.jpg" ratio="5 / 4" radius={3} />
+          <Photo
+            src={getImage('balcao')}
+            alt="Profissional usando capacete, protetor auricular, óculos e colete de segurança"
+            label="Foto de destaque, em pé (1200 × 1600 px)"
+            path="src/assets/balcao.jpg"
+            ratio="3 / 4"
+            radius={1}
+          />
         </Box>
 
-        <Stack direction="row" divider={<Divider orientation="vertical" flexItem />} spacing={{ xs: 2, md: 5 }} sx={{ mt: { xs: 4, md: 7 }, pt: 3, borderTop: 1, borderColor: 'divider' }}>
-          {FACTS.map(({ value, label }) => (
-            <Box key={label}>
-              <Typography variant="h3" component="p">{value}</Typography>
-              <Typography variant="body2" color="text.secondary">{label}</Typography>
+        <Box sx={{ mt: { xs: 5, md: 8 }, display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, borderTop: 1, borderColor: 'divider' }}>
+          {[...STORES.map((s) => ({ titulo: `Loja ${s.nome}`, texto: s.endereco })), { titulo: 'WhatsApp', texto: PHONE_LABEL }].map((info, i) => (
+            <Box key={info.titulo} sx={{ py: 2.25, pr: 2, pl: { md: i === 0 ? 0 : 3 }, borderLeft: { md: i === 0 ? 0 : 1 }, borderTop: { xs: i === 0 ? 0 : 1, md: 0 }, borderColor: 'divider' }}>
+              <Typography variant="body2" color="text.secondary">{info.titulo}</Typography>
+              <Typography fontWeight={600}>{info.texto}</Typography>
             </Box>
           ))}
-        </Stack>
+        </Box>
       </Container>
     </Box>
   );
