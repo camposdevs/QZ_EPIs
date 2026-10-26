@@ -1,158 +1,80 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:e8892b,100:f0a04b&height=200&section=header&text=QZ%20EPIs&fontSize=60&fontColor=1a1206&fontAlignY=38&desc=Equipamentos%20de%20Prote%C3%A7%C3%A3o%20Individual&descAlignY=58&descSize=22&descColor=3a2410" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:e8892b,100:f0a04b&height=200&section=header&text=QZ%20EPI&fontSize=60&fontColor=1a1206&fontAlignY=38&desc=Equipamentos%20de%20Prote%C3%A7%C3%A3o%20Individual&descAlignY=58&descSize=22&descColor=3a2410" width="100%" />
 
-**Um catálogo online simples, rápido e direto ao ponto: o cliente escolhe o produto e fala com a loja pelo WhatsApp.**
-
-Site de catálogo da QZ EPI, loja de Equipamentos de Proteção Individual em Osasco, SP, com produtos por categoria, tamanhos, marcas, lojas, contato e pedido pelo WhatsApp com a mensagem já pronta.
+**Equipamentos de Proteção Individual em Osasco, SP.**
+Escolha seus produtos, monte o orçamento e finalize pelo WhatsApp.
 
 <br>
 
-[![Ver site](https://img.shields.io/badge/🌐_Ver_site-e8892b?style=for-the-badge)](https://qzepis.netlify.app/)
-
-![React](https://img.shields.io/badge/React-18-20232a?style=flat-square&logo=react&logoColor=61dafb)
-![Material UI](https://img.shields.io/badge/Material_UI-6-007fff?style=flat-square&logo=mui&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-6-646cff?style=flat-square&logo=vite&logoColor=white)
-![Netlify](https://img.shields.io/badge/Netlify-deploy-00c7b7?style=flat-square&logo=netlify&logoColor=white)
+[![Acessar o site](https://img.shields.io/badge/🌐_Acessar_o_site-e8892b?style=for-the-badge)](https://qzepi.vercel.app/)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-(11)_93091--1928-25d366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5511930911928)
+[![Instagram](https://img.shields.io/badge/Instagram-@quinzeiro.epi-e4405f?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/quinzeiro.epi)
 
 </div>
 
 ---
 
-## Tecnologias
+## Sobre a QZ EPI
 
-- [React 18](https://react.dev/)
-- [Material UI 6](https://mui.com/) (com Emotion e ícones)
-- [Vite 6](https://vite.dev/)
-- Fontes [Barlow](https://fontsource.org/fonts/barlow) e [Barlow Condensed](https://fontsource.org/fonts/barlow-condensed) via Fontsource
-- Deploy na [Netlify](https://www.netlify.com/)
+A **QZ EPI** é uma loja de equipamentos de proteção individual em **Osasco, SP**, com atendimento em duas lojas. Atendemos desde o trabalhador que precisa de um par de luvas até empresas que compram para toda a equipe, com emissão de nota fiscal e retirada na loja.
 
-## Funcionalidades
+O site é o nosso catálogo online: simples, rápido e direto ao ponto. O cliente vê o que a loja tem, escolhe o tamanho e fala com a gente pelo WhatsApp, sem cadastro e sem complicação.
 
-- Catálogo com filtro por categoria: Pés, Mãos, Vestuário, Cabeça, Visual, Auditiva e Altura
-- Janela de detalhes do produto com escolha de tamanho/número
-- Botão que abre o WhatsApp com a mensagem pronta (produto + tamanho)
-- Botão flutuante de WhatsApp em todas as páginas
-- Seções de lojas (endereço e horário), marcas, como pedir e contato (WhatsApp e Instagram)
-- Fotos carregadas automaticamente pelo nome do arquivo; se a foto não existir, aparece um espaço reservado
-- Layout responsivo, em português (pt-BR)
+## O que você encontra
 
-## Variável de ambiente
-
-| Variável | Descrição | Exemplo |
-| --- | --- | --- |
-| `VITE_WHATSAPP_NUMBER` | Número do WhatsApp com DDI e DDD, só dígitos | `5511930911928` |
-
-- **Netlify:** Site configuration > Environment variables.
-- Se a variável não existir, o site usa o número padrão definido em `src/config.js`.
-
-## Estrutura do projeto
-
-```
-QZ_EPIs/
-├── public/               # Favicon
-├── src/
-│   ├── assets/           # Fotos (logo, balcao, faixa, lojas, marcas, produtos)
-│   ├── components/       # Header, Footer, Photo, Section, ProductDialog, WhatsAppFab
-│   ├── data/
-│   │   ├── catalog.js    # Produtos, categorias, tamanhos e mensagens
-│   │   └── store.js      # Dados das lojas e marcas
-│   ├── hooks/            # useActiveSection
-│   ├── sections/         # Hero, Linhas, Faixa, Catalog, ComoPedir, Marcas, Lojas, Contato
-│   ├── utils/
-│   │   ├── images.js     # Carrega as fotos de src/assets pelo nome
-│   │   └── whatsapp.js   # Monta o link wa.me com a mensagem
-│   ├── App.jsx
-│   ├── config.js         # Telefone, Instagram, marcas e lojas
-│   ├── theme.js          # Tema do Material UI
-│   └── main.jsx
-├── FOTOS.md              # Lista de nomes de arquivo de cada foto
-├── index.html
-├── netlify.toml
-└── vite.config.js
-```
-
-## Onde editar
-
-| O quê | Arquivo |
+| Categoria | Produtos |
 | --- | --- |
-| Produtos, categorias, tamanhos e mensagens do WhatsApp | `src/data/catalog.js` |
-| Lojas (endereço, horário) e marcas | `src/data/store.js` e `src/config.js` |
-| Telefone exibido e Instagram | `src/config.js` |
-| Cores, fontes e arredondamentos | `src/theme.js` |
-| Fotos | `src/assets/` (nomes em `FOTOS.md`) |
+| **Pés** | Botas de segurança em couro nobuck, botas para eletricista, botas de borracha e botinas com biqueira de PVC |
+| **Mãos** | Luvas de malha, pigmentadas, nitrílicas, de vaqueta, anticorte, anti-impacto, de PVC e de lona |
+| **Vestuário** | Coletes refletivos, capas de chuva, conjunto para motociclista e cinta ergonômica |
+| **Cabeça** | Capacetes de segurança em várias cores |
+| **Visual** | Óculos de segurança com lente incolor e fumê |
+| **Auditiva** | Protetores auriculares tipo concha e tipo plug |
+| **Altura** | Cintos tipo paraquedista, talabartes e cintos de 4 pontos |
 
-### Adicionar um produto
+Também trabalhamos com protetor solar, cremes e desengraxantes para as mãos, meias e itens de sinalização, como cones e pedestais.
 
-Em `src/data/catalog.js`, inclua uma linha na lista `PRODUCTS`:
+Entre as marcas, estão **Marluvas**, **Bracol**, **Vulcaflex**, **Steelflex**, **Camper** e **Cover Hands**.
 
-```js
-item('Pés', 'Bota Exemplo Marluvas', NUMEROS, {
-  mensagem: 'Olá! Tenho interesse na Bota Exemplo Marluvas, número {tamanho}. Tem disponível? Qual o valor?',
-}),
-```
+## Como pedir
 
-- O primeiro argumento é a categoria; o segundo, o nome; o terceiro, a lista de tamanhos (`NUMEROS`, `ROUPA`, `LUVA` ou `[]` para produtos sem tamanho).
-- Use `{tamanho}` na mensagem onde o tamanho escolhido deve entrar.
-- Para trocar as especificações, adicione `specs: ['linha 1', 'linha 2']` junto da mensagem.
-- Se `mensagem` for omitida, vale o texto padrão da categoria.
+1. **Escolha** os produtos no catálogo, filtrando por categoria.
+2. **Selecione** o tamanho ou número e a quantidade, e adicione ao orçamento.
+3. **Informe** seu nome, empresa ou CNPJ, a loja de retirada e se precisa de nota fiscal.
+4. **Envie** o pedido: o WhatsApp abre com a mensagem pronta e organizada, e a equipe responde com disponibilidade e valores.
 
-### Adicionar fotos
+Também é possível falar direto com a loja a partir de qualquer produto ou pelo botão de WhatsApp, que fica disponível em todas as páginas.
 
-O site encontra a foto pelo nome do arquivo (sem a extensão), aceitando `.jpg`, `.jpeg`, `.png`, `.webp` e `.svg`. O nome do arquivo de um produto é o nome dele em minúsculas, sem acentos e com hifens (ex.: `Bota Nobuck Bracol` vira `bota-nobuck-bracol.jpeg`).
+## Destaques do site
 
-| Tipo | Pasta | Exemplo |
-| --- | --- | --- |
-| Geral | `src/assets/` | `balcao.jpg` (1200 x 960 px), `faixa.jpg` (1600 x 700 px), `logo.png` |
-| Lojas | `src/assets/lojas/` | `mutinga.jpeg` |
-| Marcas | `src/assets/marcas/` | `marluvas.png` |
-| Produtos | `src/assets/produtos/` | `luva-orange.jpeg` |
+- Catálogo organizado por categoria, com detalhes e especificações de cada produto
+- Orçamento com vários itens, que fica salvo no navegador até o envio
+- Mensagem de WhatsApp montada automaticamente, com produto, tamanho e quantidade
+- Informações das lojas, com endereço e como chegar
+- Layout responsivo, pensado para o celular
+- Prévia personalizada ao compartilhar o link no WhatsApp
 
-A lista completa de nomes está em [`FOTOS.md`](FOTOS.md).
+## Lojas
 
-## Deploy na Netlify
+**Loja 1 — Mutinga**
+Av. Presidente Médici, 1600, Mutinga, Osasco, SP
 
-O projeto já inclui o `netlify.toml`:
-
-- Comando de build: `npm run build`
-- Pasta publicada: `dist`
-- Node: 20
-
-Basta conectar o repositório na Netlify e definir a variável `VITE_WHATSAPP_NUMBER`. O site está no ar em [qzepis.netlify.app](https://qzepis.netlify.app/).
-
-## Pendências
-
-Itens marcados com "(preencher)" no código:
-
-- [ ] Endereço, bairro e horário da Loja 2
-- [ ] Horário da Loja 1 (Mutinga)
-- [ ] Especificações e número do CA de cada produto
-- [ ] Fotos que ainda faltam (veja `FOTOS.md`)
+**Loja 2 — Osasco, SP**
+Endereço e horário disponíveis no site.
 
 ## Contato
 
-- WhatsApp: (11) 93091-1928
-- Instagram: [@quinzeiro.epi](https://instagram.com/quinzeiro.epi)
-- Loja 1: Av. Presidente Médici, 1600, Mutinga, Osasco, SP
+| Canal | Informação |
+| --- | --- |
+| WhatsApp | [(11) 93091-1928](https://wa.me/5511930911928) |
+| Instagram | [@quinzeiro.epi](https://instagram.com/quinzeiro.epi) |
+| Site | [qzepi.vercel.app](https://qzepi.vercel.app/) |
 
-## Orçamento
+---
 
-Cada produto tem "Adicionar ao orçamento" (tamanho e quantidade). A lista fica salva no navegador, aparece no botão "Meu orçamento" do topo e na seção "Peça seu orçamento". Ao enviar, a lista vai organizada na mensagem do WhatsApp, junto com nome, empresa/CNPJ, loja de retirada e nota fiscal. A mensagem é montada em `src/utils/quote.js`.
+<div align="center">
 
-## Fotos
+**QZ EPI** · Proteção que você pode escolher com calma e pedir em minutos.
 
-Os nomes de cada foto estão em `FOTOS.md`. Para padronizar o formato e reduzir o peso:
-
-```bash
-npm run fotos
-```
-
-Produtos viram quadrado (até 1000 px) e as lojas ficam em 16:10. Os originais vão para `fotos-originais/` (ignorada pelo Git).
-
-## Contagem de cliques (opcional)
-
-Crie uma propriedade no Google Analytics 4 e coloque o ID (G-XXXXXXXXXX) na variável `VITE_GA_ID` (`.env` local e Netlify). Eventos enviados: `whatsapp_click`, `add_to_quote`, `quote_sent`, `instagram_click` e `como_chegar_click`.
-
-## Prévia do link no WhatsApp
-
-A imagem fica em `public/og.jpg` e as tags estão no `index.html`. Se o endereço do site mudar, troque `qzepis.netlify.app` nessas tags.
+</div>
