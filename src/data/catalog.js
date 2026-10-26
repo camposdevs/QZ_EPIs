@@ -164,13 +164,13 @@ export const PRODUCTS = [
 
   // Altura
   item('Altura', 'Cinto Paraquedista 1 ponto', [], {
-    mensagem: 'Olá! Tenho interesse no Cinto Paraquedista. Tem em estoque? Qual o valor?',
+    mensagem: 'Olá! Tenho interesse no Cinto Paraquedista 1 ponto. Tem em estoque? Qual o valor?',
   }),
   item('Altura', 'Talabarte Fita “Y”', [], {
     mensagem: 'Olá! Tenho interesse no Talabarte Fita “Y”. Tem em estoque? Qual o valor?',
   }),
-  item('Altura', 'Cinto de 4 Pontos', [], {
-    mensagem: 'Olá! Tenho interesse no Cinto de 4 Pontos. Tem em estoque? Qual o valor?',
+  item('Altura', 'Cinto Paraquedista 4 Pontos', [], {
+    mensagem: 'Olá! Tenho interesse no Cinto Paraquedista 4 Pontos. Tem em estoque? Qual o valor?',
   }),
 
   // Pele

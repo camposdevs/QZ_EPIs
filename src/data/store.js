@@ -8,7 +8,7 @@ export const STORES = [
     nome: 'Mutinga',
     endereco: 'Av. Presidente Médici, 1600',
     cidade: 'Mutinga, Osasco, SP',
-    horario: 'Segunda a sexta',
+    horario: 'Horário de atendimento: Segunda a sexta-feira, das 8h às 18h.',
   },
   {
     slug: 'rochdale',
@@ -16,6 +16,6 @@ export const STORES = [
     nome: 'Rochdale',
     endereco: 'Av. Brasil, 1418',
     cidade: 'Rochdale, Osasco',
-    horario: 'Segunda a sexta',
+    horario: 'Horário de atendimento: Segunda a sexta-feira, das 8h às 18h. ',
   },
 ];
