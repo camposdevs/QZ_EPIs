@@ -33,7 +33,8 @@ export const buildMessage = (product, size) =>
     ? product.mensagem.replaceAll('{tamanho}', size ?? '').replaceAll('{produto}', product.name)
     : (MENSAGENS[product.cat] ?? MENSAGEM_PADRAO)(product.name, size);
 
-const item = (cat, name, sizes = [], opts = {}) => {
+const item = (cat, rawName, sizes = [], opts = {}) => {
+  const name = rawName.trim();
   const slug = slugify(name);
   return { cat, name, sizes, slug, specs: opts.specs ?? SPECS[slug] ?? SPEC_PADRAO, mensagem: opts.mensagem };
 };
@@ -139,7 +140,7 @@ export const PRODUCTS = [
     mensagem: 'Olá! Tenho interesse na Luva de PVC Verde. Tem em estoque? Qual o valor?',
   }),
   item('Mãos', 'Luva VdBNit Lona', LUVA, {
-    mensagem: 'Olá! Tenho interesse na Luva VdBNit Lona. Tem em estoque? Qual o valor?',
+    mensagem: 'Olá! Tenho interesse na Luva VdBNit Lona, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
 
   // Visual

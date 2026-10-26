@@ -214,8 +214,8 @@ export const SPECS = {
     'Uso no canal auditivo',
     // 'CA 00000',
   ],
-  'cinto-paraquedista': [
-    'Cinto de segurança tipo paraquedista',
+  'cinto-paraquedista-1-ponto': [
+    'Cinto de segurança tipo paraquedista com 1 ponto de fixação',
     'Tiras nos ombros, no peito e nas pernas',
     'Para trabalho em altura, usado junto com talabarte',
     // 'CA 00000',
@@ -266,5 +266,11 @@ export const SPECS = {
   'cone-de-sinalizacao': [
     'Cone de sinalização laranja e branco',
     'Para sinalização e isolamento de áreas',
+  ],
+  'luva-vdbnit-lona': [
+    'Luva de lona com palma revestida em nitrila, na cor azul',
+    'Melhor aderência e resistência a óleos e graxas',
+    'Tamanhos: P, M e G',
+    // 'CA 00000',
   ],
 };
