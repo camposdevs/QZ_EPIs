@@ -2,7 +2,6 @@ import { useState } from 'react';
 import TopBar from './components/TopBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import WhatsAppFab from './components/WhatsAppFab';
 import QuoteDrawer from './components/QuoteDrawer';
 import Hero from './sections/Hero';
 import Linhas from './sections/Linhas';
@@ -34,7 +33,6 @@ export default function App() {
         <Contato />
       </main>
       <Footer />
-      <WhatsAppFab />
       <QuoteDrawer />
     </>
   );
