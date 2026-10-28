@@ -174,12 +174,6 @@ export const PRODUCTS = [
   }),
 
   // Pele
-  item('Pele', 'Protetor Solar 2kg FPS 30', [], {
-    mensagem: 'Olá! Tenho interesse no Protetor Solar 2kg FPS 30. Tem em estoque? Qual o valor?',
-  }),
-  item('Pele', 'Protetor Solar 2kg FPS 60', [], {
-    mensagem: 'Olá! Tenho interesse no Protetor Solar 2kg FPS 60. Tem em estoque? Qual o valor?',
-  }),
   item('Pele', 'Desengraxante Para as Mãos Cover Hands', [], {
     mensagem: 'Olá! Tenho interesse no Desengraxante Para as Mãos Cover Hands. Tem em estoque? Qual o valor?',
   }),

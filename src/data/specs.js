@@ -233,18 +233,6 @@ export const SPECS = {
     'Para trabalho em altura',
     // 'CA 00000',
   ],
-  'protetor-solar-2kg-fps-30': [
-    'Protetor solar FPS 30',
-    'Embalagem de 2 kg',
-    'Indicado para quem trabalha ao ar livre',
-    // 'CA 00000',
-  ],
-  'protetor-solar-2kg-fps-60': [
-    'Protetor solar FPS 60',
-    'Embalagem de 2 kg',
-    'Indicado para quem trabalha ao ar livre',
-    // 'CA 00000',
-  ],
   'desengraxante-para-as-maos-cover-hands': [
     'Desengraxante para as mãos',
     'Marca Cover Hands',
