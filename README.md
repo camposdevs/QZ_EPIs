@@ -35,7 +35,7 @@ O site é o nosso catálogo online: simples, rápido e direto ao ponto. O client
 
 Também trabalhamos com protetor solar, cremes e desengraxantes para as mãos, meias e itens de sinalização, como cones e pedestais.
 
-Entre as marcas, estão **Marluvas**, **Bracol**, **Vulcaflex**, **Steelflex**, **Camper** e **Cover Hands**.
+Entre as marcas, estão **Marluvas**, **Bracol**, **Vulcaflex**, **Steelflex**, **Camper**, **Volk**, **Brasmo** e **Cover Hands**.
 
 ## Como pedir
 
@@ -60,8 +60,8 @@ Também é possível falar direto com a loja a partir de qualquer produto ou pel
 **Loja 1 — Mutinga**
 Av. Presidente Médici, 1600, Mutinga, Osasco, SP
 
-**Loja 2 — Osasco, SP**
-Endereço e horário disponíveis no site.
+**Loja 2 — Rochdale**
+Av. Brasil, 1418, Rochdale, Osasco, SP
 
 ## Contato
 
