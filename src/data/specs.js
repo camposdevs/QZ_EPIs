@@ -305,4 +305,21 @@ export const SPECS = {
     'Hastes azuis',
     // 'CA 00000',
   ],
+  'colete-porta-ferramenta': [
+    'Colete preto com detalhes em amarelo fluorescente',
+    'Vários bolsos para ferramentas e pertences',
+    'Fechamento frontal por zíper',
+    'Ajuste lateral com fivela',
+  ],
+  'meia-dallf-cano-curto': [
+    'Meia Dallf de cano curto',
+    'Pacote com 6 pares',
+    'Cores variadas: preto, cinza e azul-marinho',
+    'Numeração: 39 ao 43',
+  ],
+  'meia-dallf-fun-casual': [
+    'Meia Dallf da linha Fun Casual',
+    'Cano alto, em modelos lisos e estampados',
+    'Estampas variadas, como xadrez e lanches',
+  ],
 };
