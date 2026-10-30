@@ -8,7 +8,6 @@ import { STORES } from '../data/store';
 import { getImage } from '../utils/images';
 import { buildQuoteMessage, sizeLabel } from '../utils/quote';
 import { waLink } from '../utils/whatsapp';
-import { track } from '../utils/analytics';
 
 export default function QuoteForm() {
   const { items, count, setQty, remove, clear } = useQuote();
@@ -25,7 +24,6 @@ export default function QuoteForm() {
       obs: f.get('obs'),
       livre: f.get('livre'),
     });
-    track('quote_sent', { itens: items.length, unidades: count, loja: f.get('loja') || 'sem preferência' });
     window.open(waLink(text), '_blank', 'noopener,noreferrer');
   };
 

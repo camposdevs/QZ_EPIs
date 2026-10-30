@@ -16,6 +16,6 @@ export const STORES = [
     nome: 'Rochdale',
     endereco: 'Av. Brasil, 1418',
     cidade: 'Rochdale, Osasco',
-    horario: 'Horário de atendimento: Segunda a sexta-feira, das 8h às 18h. ',
+    horario: 'Horário de atendimento: Segunda a sexta-feira, das 8h às 18h.',
   },
 ];

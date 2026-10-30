@@ -5,7 +5,6 @@ import { waLink, GENERIC_MESSAGE } from '../utils/whatsapp';
 import { useQuote } from '../context/QuoteContext';
 import { STORES } from '../data/store';
 import { PHONE_LABEL } from '../config';
-import { track } from '../utils/analytics';
 
 export default function Hero() {
   const { openDrawer } = useQuote();
@@ -22,12 +21,13 @@ export default function Hero() {
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
               <Button size="large" variant="contained" href="#catalogo">Ver produtos</Button>
               <Button size="large" variant="outlined" color="ink" onClick={openDrawer}>Montar orçamento</Button>
-              <Button size="large" variant="outlined" color="ink" href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click', { origem: 'hero' })}>
+              <Button size="large" variant="outlined" color="ink" href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer">
                 Falar no WhatsApp
               </Button>
             </Box>
           </Box>
           <Photo
+            priority
             src={getImage('balcao')}
             alt="Profissional usando capacete, protetor auricular, óculos e colete de segurança"
             label="Foto de destaque, em pé (1200 × 1600 px)"

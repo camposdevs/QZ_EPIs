@@ -67,6 +67,7 @@ const theme = createTheme({
         sizeLarge: { padding: '13px 26px', fontSize: '1rem' },
       },
     },
+    MuiLink: { styleOverrides: { root: { display: 'inline-block', padding: '8px 0' } } },
     MuiChip: { styleOverrides: { root: { fontWeight: 600, borderRadius: 4 } } },
     MuiOutlinedInput: { styleOverrides: { root: { borderRadius: 4 } } },
     MuiDialog: { styleOverrides: { paper: { borderRadius: 6 } } },

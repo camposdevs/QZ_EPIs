@@ -5,7 +5,6 @@ import Photo from '../components/Photo';
 import { STORES } from '../data/store';
 import { PHONE_LABEL } from '../config';
 import { getImage } from '../utils/images';
-import { track } from '../utils/analytics';
 
 const address = (s) => `${s.endereco}, ${s.cidade}`;
 const routeUrl = (s) => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address(s))}`;
@@ -30,7 +29,6 @@ export default function Lojas() {
                 href={routeUrl(s)}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => track('como_chegar_click', { loja: s.nome })}
                 sx={{ mt: 2, alignSelf: 'flex-start' }}
               >
                 Como chegar

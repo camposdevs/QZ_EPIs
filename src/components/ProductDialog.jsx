@@ -11,7 +11,6 @@ import { getImage } from '../utils/images';
 import { buildMessage, categoryLabel } from '../data/catalog';
 import { waLink } from '../utils/whatsapp';
 import { useQuote } from '../context/QuoteContext';
-import { track } from '../utils/analytics';
 
 export default function ProductDialog({ product, onClose }) {
   const theme = useTheme();
@@ -20,7 +19,8 @@ export default function ProductDialog({ product, onClose }) {
   const [size, setSize] = useState(null);
   const [qty, setQty] = useState(1);
   useEffect(() => {
-    setSize(null);
+    // Produto com um único tamanho já vem selecionado.
+    setSize(product && product.sizes.length === 1 ? product.sizes[0] : null);
     setQty(1);
   }, [product]);
 
@@ -28,7 +28,6 @@ export default function ProductDialog({ product, onClose }) {
 
   const addToQuote = () => {
     add(product, size, qty);
-    track('add_to_quote', { produto: product.name, categoria: product.cat, tamanho: size ?? 'sem tamanho', quantidade: qty });
     onClose();
   };
 
@@ -85,7 +84,6 @@ export default function ProductDialog({ product, onClose }) {
                   color="whatsapp"
                   startIcon={<WhatsAppIcon />}
                   disabled={needSize}
-                  onClick={() => track('whatsapp_click', { origem: 'produto', produto: product.name, tamanho: size ?? 'sem tamanho' })}
                   {...(!needSize && { href: waLink(buildMessage(product, size)), target: '_blank', rel: 'noopener noreferrer' })}
                 >
                   Pedir só este no WhatsApp

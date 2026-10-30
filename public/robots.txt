@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qzepi.vercel.app/sitemap.xml

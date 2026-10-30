@@ -1,7 +1,6 @@
 import { Box, Container, Link, Stack, Typography } from '@mui/material';
 import { INSTAGRAM, PHONE_LABEL } from '../config';
 import { STORES } from '../data/store';
-import { track } from '../utils/analytics';
 
 export default function Footer() {
   return (
@@ -23,7 +22,7 @@ export default function Footer() {
             <Typography variant="body2" color="text.secondary">
               <Box component="span" sx={{ color: 'text.primary', fontWeight: 600 }}>Contato</Box><br />
               WhatsApp {PHONE_LABEL}<br />
-              <Link href={`https://instagram.com/${INSTAGRAM}`} target="_blank" rel="noopener noreferrer" color="primary.main" underline="hover" onClick={() => track('instagram_click', { origem: 'rodape' })}>
+              <Link href={`https://instagram.com/${INSTAGRAM}`} target="_blank" rel="noopener noreferrer" color="primary.main" underline="hover">
                 @{INSTAGRAM}
               </Link>
             </Typography>

@@ -4,7 +4,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import QuoteForm from '../components/QuoteForm';
 import { INSTAGRAM, PHONE_LABEL } from '../config';
 import { waLink, GENERIC_MESSAGE } from '../utils/whatsapp';
-import { track } from '../utils/analytics';
 
 const PASSOS = [
   'Escolha os produtos no catálogo e o tamanho de cada um.',
@@ -26,7 +25,7 @@ export default function Contato() {
               {PASSOS.map((p) => (<Typography key={p} component="li" variant="body2">{p}</Typography>))}
             </Stack>
             <Stack direction="row" flexWrap="wrap" gap={1.5}>
-              <Button size="large" variant="outlined" color="whatsapp" startIcon={<WhatsAppIcon />} href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click', { origem: 'contato' })}>
+              <Button size="large" variant="outlined" color="whatsapp" startIcon={<WhatsAppIcon />} href={waLink(GENERIC_MESSAGE)} target="_blank" rel="noopener noreferrer">
                 {PHONE_LABEL}
               </Button>
               <Button
@@ -36,7 +35,6 @@ export default function Contato() {
                 href={`https://instagram.com/${INSTAGRAM}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => track('instagram_click', { origem: 'contato' })}
                 sx={{
                   color: '#fff',
                   background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',

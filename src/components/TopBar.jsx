@@ -1,6 +1,5 @@
 import { Box, Container, Link, Typography } from '@mui/material';
 import { PHONE_LABEL } from '../config';
-import { track } from '../utils/analytics';
 import { waLink, GENERIC_MESSAGE } from '../utils/whatsapp';
 
 export default function TopBar() {
@@ -18,7 +17,6 @@ export default function TopBar() {
           underline="hover"
           variant="body2"
           fontWeight={700}
-          onClick={() => track('whatsapp_click', { origem: 'barra_topo' })}
         >
           WhatsApp {PHONE_LABEL}
         </Link>

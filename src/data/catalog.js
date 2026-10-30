@@ -1,8 +1,5 @@
 import { SPECS } from './specs';
 const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => String(a + i));
-const NUMEROS = range(36, 46);
-const ROUPA = ['P', 'M', 'G', 'GG'];
-const LUVA = ['P', 'M', 'G'];
 const SPEC_PADRAO = [];
 
 export const slugify = (text) =>
@@ -28,10 +25,14 @@ const MENSAGENS = {
   Sinalização: (n) => `Olá! Quero saber sobre ${n}. Tem em estoque? Qual o valor?`,
 };
 const MENSAGEM_PADRAO = (n, t) => `Olá! Tenho interesse em ${n}${t ? `, tamanho ${t}` : ''}. Qual o valor?`;
-export const buildMessage = (product, size) =>
-  product.mensagem
-    ? product.mensagem.replaceAll('{tamanho}', size ?? '').replaceAll('{produto}', product.name)
-    : (MENSAGENS[product.cat] ?? MENSAGEM_PADRAO)(product.name, size);
+export const buildMessage = (product, size) => {
+  if (!product.mensagem) return (MENSAGENS[product.cat] ?? MENSAGEM_PADRAO)(product.name, size);
+  const texto = product.mensagem.replaceAll('{produto}', product.name);
+  // Sem tamanho escolhido (ou produto de tamanho único), tira o trecho do tamanho da mensagem.
+  return size
+    ? texto.replaceAll('{tamanho}', size)
+    : texto.replace(/,?\s*(tamanho|número)\s*\{tamanho\}/g, '').replaceAll('{tamanho}', '');
+};
 
 const item = (cat, rawName, sizes = [], opts = {}) => {
   const name = rawName.trim();
@@ -46,46 +47,49 @@ const item = (cat, rawName, sizes = [], opts = {}) => {
 // A foto do produto é achada pelo nome do arquivo: src/assets/produtos/<slug>.jpg
 export const PRODUCTS = [
   // Pés
-  item('Pés', 'Bota Premier Marluvas', NUMEROS, {
+  item('Pés', 'Bota Premier Marluvas', range(36, 44), {
     mensagem: 'Olá! Tenho interesse na Bota Premier Marluvas, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota Nobuck Marluvas com Velcro', NUMEROS, {
+  item('Pés', 'Bota Nobuck Marluvas com Velcro', range(38, 43), {
     mensagem: 'Olá! Tenho interesse na Bota Nobuck Marluvas com Velcro, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota Nobuck Marluvas', NUMEROS, {
+  item('Pés', 'Bota Nobuck Marluvas', range(33, 46), {
     mensagem: 'Olá! Tenho interesse na Bota Nobuck Marluvas, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota Nobuck Bracol', NUMEROS, {
+  item('Pés', 'Bota Nobuck Bracol', range(36, 43), {
     mensagem: 'Olá! Tenho interesse na Bota Nobuck Bracol, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota Eletricista Marluvas', NUMEROS, {
+  item('Pés', 'Bota Eletricista Marluvas', range(38, 42), {
     mensagem: 'Olá! Tenho interesse na Bota Eletricista Marluvas, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota de Borracha Preta Vulcaflex Cano Médio', NUMEROS, {
+  item('Pés', 'Bota de Borracha Preta Vulcaflex Cano Médio', range(37, 44), {
     mensagem: 'Olá! Tenho interesse na Bota de Borracha Preta Vulcaflex Cano Médio, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota de Borracha Branca Vulcaflex Cano Médio', NUMEROS, {
+  item('Pés', 'Bota de Borracha Branca Vulcaflex Cano Médio', range(37, 44), {
     mensagem: 'Olá! Tenho interesse na Bota de Borracha Branca Vulcaflex Cano Médio, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Bota de Bico de PVC Vulcaflex', NUMEROS, {
+  item('Pés', 'Bota de Bico de PVC Vulcaflex', range(37, 45), {
     mensagem: 'Olá! Tenho interesse na Bota de Bico de PVC Vulcaflex, número {tamanho}. Tem disponível? Qual o valor?',
   }),
 
   // Vestuário
-  item('Vestuário', 'Colete Refletivo', [], {
-    mensagem: 'Olá! Tenho interesse no Colete Refletivo. Tem em estoque? Qual o valor?',
+  item('Vestuário', 'Colete Refletivo', ['M', 'G', 'XG', 'XXG'], {
+    mensagem: 'Olá! Tenho interesse no Colete Refletivo, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Vestuário', 'Capa de Chuva Amarela', ROUPA, {
+  item('Vestuário', 'Colete Porta Ferramenta', [], {
+    mensagem: 'Olá! Tenho interesse no Colete Porta Ferramenta. Tem em estoque? Qual o valor?',
+  }),
+  item('Vestuário', 'Capa de Chuva Amarela', ['G', 'GG'], {
     mensagem: 'Olá! Tenho interesse na Capa de Chuva Amarela, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Vestuário', 'Cinta Ergonômica', ROUPA, {
+  item('Vestuário', 'Cinta Ergonômica', ['P', 'M', 'G', 'EG'], {
     mensagem: 'Olá! Tenho interesse na Cinta Ergonômica, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Vestuário', 'Capa de Chuva EVA', [], {
-    mensagem: 'Olá! Tenho interesse na Capa de Chuva EVA. Tem em estoque? Qual o valor?',
+  item('Vestuário', 'Capa de Chuva EVA', ['G', 'GG'], {
+    mensagem: 'Olá! Tenho interesse na Capa de Chuva EVA, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Vestuário', 'Conjunto Motociclista', ROUPA, {
-    mensagem: 'Olá! Tenho interesse no Conjunto Motociclista, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  item('Vestuário', 'Conjunto Motociclista', [], {
+    mensagem: 'Olá! Tenho interesse no Conjunto Motociclista. Tem disponível? Qual o valor?',
   }),
 
   // Cabeça
@@ -112,34 +116,34 @@ export const PRODUCTS = [
   }),
 
   // Mãos
-  item('Mãos', 'Luva Tátil Black', LUVA, {
+  item('Mãos', 'Luva Tátil Black', ['P', 'M', 'G', 'EG'], {
     mensagem: 'Olá! Tenho interesse na Luva Tátil Black, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Mãos', 'Luva Pigmentada', LUVA, {
-    mensagem: 'Olá! Tenho interesse na Luva Pigmentada, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  item('Mãos', 'Luva Pigmentada', [], {
+    mensagem: 'Olá! Tenho interesse na Luva Pigmentada. Tem disponível? Qual o valor?',
   }),
-  item('Mãos', 'Luva Orange', LUVA, {
+  item('Mãos', 'Luva Orange', ['M', 'G'], {
     mensagem: 'Olá! Tenho interesse na Luva Orange, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Mãos', 'Luva Bicolor', LUVA, {
+  item('Mãos', 'Luva Bicolor', ['P', 'M', 'G', 'EG'], {
     mensagem: 'Olá! Tenho interesse na Luva Bicolor, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Mãos', 'Luva Anti-Impacto', LUVA, {
-    mensagem: 'Olá! Tenho interesse na Luva Anti-Impacto, tamanho {tamanho}. Tem disponível? Qual o valor?',
+  item('Mãos', 'Luva Anti-Impacto', [], {
+    mensagem: 'Olá! Tenho interesse na Luva Anti-Impacto. Tem disponível? Qual o valor?',
   }),
-  item('Mãos', 'Luva de Vaqueta', LUVA, {
+  item('Mãos', 'Luva de Vaqueta', ['M', 'G', 'GG'], {
     mensagem: 'Olá! Tenho interesse na Luva de Vaqueta, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Mãos', 'Luva Cut Smart', LUVA, {
+  item('Mãos', 'Luva Cut Smart', ['G'], {
     mensagem: 'Olá! Tenho interesse na Luva Cut Smart, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Mãos', 'Luva Nitrílica', LUVA, {
+  item('Mãos', 'Luva Nitrílica', ['G'], {
     mensagem: 'Olá! Tenho interesse na Luva Nitrílica, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Mãos', 'Luva de PVC Verde', [], {
-    mensagem: 'Olá! Tenho interesse na Luva de PVC Verde. Tem em estoque? Qual o valor?',
+  item('Mãos', 'Luva de PVC Verde', ['G'], {
+    mensagem: 'Olá! Tenho interesse na Luva de PVC Verde, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Mãos', 'Luva VdBNit Lona', LUVA, {
+  item('Mãos', 'Luva VdBNit Lona', ['M'], {
     mensagem: 'Olá! Tenho interesse na Luva VdBNit Lona, tamanho {tamanho}. Tem disponível? Qual o valor?',
   }),
 
@@ -149,6 +153,18 @@ export const PRODUCTS = [
   }),
   item('Visual', 'Óculos Fumê Steelflex', [], {
     mensagem: 'Olá! Tenho interesse no Óculos Fumê Steelflex. Tem em estoque? Qual o valor?',
+  }),
+  item('Visual', 'Óculos Florence Lente Espelhada', [], {
+    mensagem: 'Olá! Tenho interesse no Óculos Florence Lente Espelhada. Tem em estoque? Qual o valor?',
+  }),
+  item('Visual', 'Óculos Florence Fumê', [], {
+    mensagem: 'Olá! Tenho interesse no Óculos Florence Fumê. Tem em estoque? Qual o valor?',
+  }),
+  item('Visual', 'Óculos Florence Incolor', [], {
+    mensagem: 'Olá! Tenho interesse no Óculos Florence Incolor. Tem em estoque? Qual o valor?',
+  }),
+  item('Visual', 'Óculos Imola', [], {
+    mensagem: 'Olá! Tenho interesse no Óculos Imola. Tem em estoque? Qual o valor?',
   }),
 
   // Auditiva
@@ -182,11 +198,11 @@ export const PRODUCTS = [
   }),
 
   // Meias
-  item('Pés', 'Meia Dallf Cano Curto', [], {
-  mensagem: 'Olá! Tenho interesse na Meia Dallf Cano Curto. Tem disponível? Qual o valor?',
+  item('Pés', 'Meia Dallf Cano Curto', range(39, 43), {
+  mensagem: 'Olá! Tenho interesse na Meia Dallf Cano Curto, número {tamanho}. Tem disponível? Qual o valor?',
   }),
-  item('Pés', 'Meia Dallf Fun Casual', [], {
-    mensagem: 'Olá! Tenho interesse na Meia Dallf Fun Casual. Tem disponível? Qual o valor?',
+  item('Pés', 'Meia Dallf Fun Casual', range(39, 43), {
+    mensagem: 'Olá! Tenho interesse na Meia Dallf Fun Casual, número {tamanho}. Tem disponível? Qual o valor?',
   }),
 
   // Sinalização e Delimitação

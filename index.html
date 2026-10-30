@@ -7,6 +7,7 @@
     <title>QZ EPI — Equipamentos de Proteção Individual em Osasco</title>
     <meta name="description" content="QZ EPI: botas, luvas, capacetes, óculos e outros equipamentos de proteção individual em Osasco, SP. Monte seu orçamento e finalize pelo WhatsApp." />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Prévia do link (WhatsApp, Facebook, LinkedIn). Se o endereço do site mudar, troque o domínio abaixo. -->
     <meta property="og:type" content="website" />
@@ -20,6 +21,53 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="QZ EPI, equipamentos de proteção individual em Osasco" />
     <meta name="twitter:card" content="summary_large_image" />
+    <!-- Dados da loja para os buscadores. Se o endereço do site mudar, troque qzepi.vercel.app aqui. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://qzepi.vercel.app/#loja",
+            "name": "QZ EPI",
+            "url": "https://qzepi.vercel.app/",
+            "logo": "https://qzepi.vercel.app/favicon.png",
+            "sameAs": ["https://instagram.com/quinzeiro.epi"]
+          },
+          {
+            "@type": "Store",
+            "name": "QZ EPI, loja Mutinga",
+            "url": "https://qzepi.vercel.app/",
+            "image": "https://qzepi.vercel.app/og.jpg",
+            "telephone": "+55 11 93091-1928",
+            "parentOrganization": { "@id": "https://qzepi.vercel.app/#loja" },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Av. Presidente Médici, 1600",
+              "addressLocality": "Osasco",
+              "addressRegion": "SP",
+              "addressCountry": "BR"
+            }
+          },
+          {
+            "@type": "Store",
+            "name": "QZ EPI, loja Rochdale",
+            "url": "https://qzepi.vercel.app/",
+            "image": "https://qzepi.vercel.app/og.jpg",
+            "telephone": "+55 11 93091-1928",
+            "parentOrganization": { "@id": "https://qzepi.vercel.app/#loja" },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Av. Brasil, 1418",
+              "addressLocality": "Osasco",
+              "addressRegion": "SP",
+              "postalCode": "06220-050",
+              "addressCountry": "BR"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

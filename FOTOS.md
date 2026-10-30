@@ -20,10 +20,11 @@ O site acha a foto pelo nome do arquivo (sem a extensão). Aceita .jpg, .jpeg, .
 - bota-nobuck-marluvas.jpg: Bota Nobuck Marluvas
 - bota-nobuck-bracol.jpg: Bota Nobuck Bracol
 - bota-eletricista-marluvas.jpg: Bota Eletricista Marluvas
-- bota-de-borracha-preta-vulcaflez-cano-medio.jpg: Bota de Borracha Preta Vulcaflez Cano Médio
-- bota-de-borracha-branca-vulcaflez-cano-medio.jpg: Bota de Borracha Branca Vulcaflez Cano Médio
-- bota-de-bico-de-pvc-vulcaflez.jpg: Bota de Bico de PVC Vulcaflez
+- bota-de-borracha-preta-vulcaflex-cano-medio.jpg: Bota de Borracha Preta Vulcaflex Cano Médio
+- bota-de-borracha-branca-vulcaflex-cano-medio.jpg: Bota de Borracha Branca Vulcaflex Cano Médio
+- bota-de-bico-de-pvc-vulcaflex.jpg: Bota de Bico de PVC Vulcaflex
 - colete-refletivo.jpg: Colete Refletivo
+- colete-porta-ferramenta.jpg: Colete Porta Ferramenta
 - capa-de-chuva-amarela.jpg: Capa de Chuva Amarela
 - cinta-ergonomica.jpg: Cinta Ergonômica
 - capa-de-chuva-eva.jpg: Capa de Chuva EVA
@@ -47,16 +48,19 @@ O site acha a foto pelo nome do arquivo (sem a extensão). Aceita .jpg, .jpeg, .
 - luva-vdbnit-lona.jpg: Luva VdBNit Lona
 - oculos-incolor-steelflex.jpg: Óculos Incolor Steelflex
 - oculos-fume-steelflex.jpg: Óculos Fumê Steelflex
+- oculos-florence-lente-espelhada.jpg: Óculos Florence Lente Espelhada
+- oculos-florence-fume.jpg: Óculos Florence Fumê
+- oculos-florence-incolor.jpg: Óculos Florence Incolor
+- oculos-imola.jpg: Óculos Imola
 - protetor-auricular-tipo-concha-soft-slim.jpg: Protetor Auricular Tipo Concha Soft Slim
 - protetor-auricular-tipo-concha-comfort-plus.jpg: Protetor Auricular Tipo Concha Comfort Plus
 - protetor-auricular.jpg: Protetor Auricular
 - cinto-paraquedista-1-ponto.jpg: Cinto Paraquedista 1 ponto
 - talabarte-fita-y.jpg: Talabarte Fita “Y”
-- cinto-de-4-pontos.jpg: Cinto de 4 Pontos
-- protetor-solar-2kg-fps-30.jpg: Protetor Solar 2kg FPS 30
-- protetor-solar-2kg-fps-60.jpg: Protetor Solar 2kg FPS 60
+- cinto-paraquedista-4-pontos.jpg: Cinto Paraquedista 4 Pontos
 - desengraxante-para-as-maos-cover-hands.jpg: Desengraxante Para as Mãos Cover Hands
 - creme-protetor-para-a-pele-cover-hands.jpg: Creme Protetor Para a Pele Cover Hands
-- meias.jpg: Meias
+- meia-dallf-cano-curto.jpg: Meia Dallf Cano Curto
+- meia-dallf-fun-casual.jpg: Meia Dallf Fun Casual
 - pedestal-plastico-zebrado.jpg: Pedestal Plástico Zebrado
 - cone-de-sinalizacao.jpg: Cone de sinalização
